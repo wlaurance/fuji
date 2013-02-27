@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+var fuji = require('../index')
+
+fuji.start(function (err){
+  if (!err) {
+    fuji.log.info('fuji'.grey + ' ok'.green.bold);
+  }
+});

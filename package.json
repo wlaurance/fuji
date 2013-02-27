@@ -17,5 +17,10 @@
   ],
   "author": "Will S. Laurance",
   "license": "MIT",
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "flatiron": "~0.3.4",
+    "flatiron-cli-version": "~0.1.3"
+  },
+  "bin": { "fuji": "./bin/fuji" }
 }
