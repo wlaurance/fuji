@@ -20,7 +20,10 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "flatiron": "~0.3.4",
-    "flatiron-cli-version": "~0.1.3"
+    "flatiron-cli-version": "~0.1.3",
+    "picture-tube": "0.0.4"
   },
-  "bin": { "fuji": "./bin/fuji" }
+  "bin": {
+    "fuji": "./bin/fuji"
+  }
 }
