@@ -1,0 +1,21 @@
+{
+  "name": "fuji",
+  "version": "0.0.0",
+  "description": "riak cli for zen minds",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wlaurance/fuji"
+  },
+  "keywords": [
+    "riak",
+    "cli",
+    "admin"
+  ],
+  "author": "Will S. Laurance",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
