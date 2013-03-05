@@ -4,5 +4,5 @@ module.exports = [
   '',
   'usage:',
   'fuji bucket [list, stats]',
-  'fuji bucket bucketname [keys, count, props]'
+  'fuji bucket bucketname [keys, count, props, getAll]'
 ];

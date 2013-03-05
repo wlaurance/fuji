@@ -40,6 +40,12 @@ module.exports = function(fuji){
             cb();
           });
           break;
+        case 'getAll':
+          riak.getAll(bucket, function(err, all){
+            console.log(all);
+            cb();
+          });
+          break;
         default:
           console.log(cmd + ' not recognized');
           cb();
