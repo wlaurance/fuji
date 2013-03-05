@@ -1,17 +1,15 @@
 var flatiron = require('flatiron'),
     path = require('path');
 
-var fuji = module.exports = new flatiron.App({
-  directories:{
-    root: path.join(process.env.HOME, '.fuji')
-  }
-});
+var fuji = module.exports = new flatiron.App();
 
-fuji.use(require('flatiron-cli-version'));
+fuji.config.file({
+  file: path.join(process.env.HOME, '.fujiconfig')
+});
 
 fuji.use(flatiron.plugins.cli, {
-  usage: require(__dirname + '/commands/usage'),
-  source: path.join(__dirname, 'fuji', 'commands')
+  usage: require(__dirname + '/commands/usage')
 });
 
-
+require('./commands')(fuji);
+fuji.use(require('flatiron-cli-config'));

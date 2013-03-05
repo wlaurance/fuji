@@ -3,13 +3,19 @@ var fuji = require('../index');
 
 var PT = require('picture-tube');
 
-var tube = new PT({cols: 40}), fs = require('fs');
-tube.pipe(process.stdout);
-fs.createReadStream(__dirname + '/../assets/logo.png').pipe(tube);
-tube.on('end', function(){
+var start =  function(){
   fuji.start(function (err){
     if (!err) {
       fuji.log.info('fuji'.grey + ' ok'.green.bold);
     }
   });
-});
+};
+
+if (process.argv.length > 2) {
+  start();
+} else {
+  var tube = new PT({cols: 40}), fs = require('fs');
+  tube.pipe(process.stdout);
+  fs.createReadStream(__dirname + '/../assets/logo.png').pipe(tube);
+  tube.on('end', function(){start();});
+}
