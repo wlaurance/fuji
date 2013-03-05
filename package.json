@@ -23,7 +23,8 @@
     "flatiron-cli-version": "~0.1.3",
     "picture-tube": "0.0.4",
     "riak-js": "~0.9.4pre3",
-    "flatiron-cli-config": "~0.1.4"
+    "flatiron-cli-config": "~0.1.4",
+    "colors": "~0.6.0-1"
   },
   "bin": {
     "fuji": "./bin/fuji"

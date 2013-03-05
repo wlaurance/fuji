@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+require('colors');
 var fuji = require('../index');
 
 var PT = require('picture-tube');
