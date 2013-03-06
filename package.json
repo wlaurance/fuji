@@ -1,6 +1,6 @@
 {
   "name": "fuji",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "riak cli for zen minds",
   "main": "index.js",
   "scripts": {
