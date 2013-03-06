@@ -1,10 +1,11 @@
 var flatiron = require('flatiron'),
-    path = require('path');
+    path = require('path'),
+    configFileName = '.fujiconfig';
 
 var fuji = module.exports = new flatiron.App();
 
 fuji.config.file({
-  file: path.join(process.env.HOME, '.fujiconfig')
+  file: path.join(process.env.HOME, configFileName)
 });
 
 fuji.use(flatiron.plugins.cli, {

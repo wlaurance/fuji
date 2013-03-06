@@ -1,14 +1,39 @@
 #!/usr/bin/env node
-require('colors');
-var fuji = require('../index');
+var colors = require('colors'),
+  path = require('path'),
+  fs = require('fs');
 
 var PT = require('picture-tube');
 
 var start =  function(){
-  fuji.start(function (err){
-    if (!err) {
-      fuji.log.info('fuji'.grey + ' ok'.green.bold);
+  settings(function(){
+    var fuji = require('../index');
+    fuji.start(function (err){
+      if (!err) {
+        fuji.log.info('fuji'.grey + ' ok'.green.bold);
+      }
+    });
+  });
+};
+/*
+ * export app settings to the environment vars
+ */
+var settings = function(callback){
+  fs.readFile(path.join(process.env.HOME, '.fujiconfig'), function(err, blob){
+    if (!err){
+      try{
+        var json = JSON.parse(blob.toString());
+        if (json.host){
+          process.env.FUJI_RIAK_HOST = json.host;
+        }
+        if (json.port){
+          process.env.FUJI_RIAK_PORT = json.port;
+        }
+      } catch (e){
+        console.error(e);
+      }
     }
+    callback();
   });
 };
 
@@ -20,3 +45,4 @@ if (process.argv.length > 2) {
   fs.createReadStream(__dirname + '/../assets/logo.png').pipe(tube);
   tube.on('end', function(){start();});
 }
+
