@@ -7,5 +7,6 @@ module.exports = [
   'fuji bucket bucketname [keys, count, props, getAll]',
   'fuji ping',
   'fuji settings',
-  'fuji settings reset'
+  'fuji settings reset',
+  'fuji get bucketname key'
 ];
